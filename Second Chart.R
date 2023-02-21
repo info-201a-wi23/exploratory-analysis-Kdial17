@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-=======
+
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
->>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
+
 library("dplyr")
 
-Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
+Mental_Health_Dataset <- read.csv("Mental-Health-With-College-Students.csv", stringsAsFactors = FALSE)
 
 ggplot(data = Mental_Health_Dataset, aes(x = Age, y = SWLS_1,SWLS_2,SWLS_3,SWLS_4,SWLS_5,SWLS_G)) +
   geom_col(color = "blue", shape = 16, size = 1) +

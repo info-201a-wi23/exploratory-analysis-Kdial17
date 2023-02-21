@@ -158,10 +158,8 @@ select(summary_table, Gender, num_students_assessed, percent_vaccinated, avg_hou
 
 ```
 ### Chart 1
-```{r, echo = FALSE, code = readLines("first_chart.R"), message=FALSE, warning = FALSE}
-```
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("First Chart.R")}
+```{r, echo = FALSE, message = FALSE, code = readLines("First Chart.R")}
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library("dplyr")
 library(ggplot2)
@@ -173,9 +171,11 @@ ggplot(data = Mental_Health_Dataset, aes(x = Relationships, y = SWLS_1,SWLS_2,SW
   labs(x = "Relationship Status", y = "Life Satisfaction", title ="Relationship between Relationship Status and Life Satisfaction During the 4th Wave of the Pandemic")
 ```
 
+Chart 1 depicts the relationship between the subject’s relationship status and self-prescribed overall life satisfaction on a ranking from 1-10, with 1 being the lowest score of overall life satisfaction and 10 being the highest. The Y-Axis displays the total values based on the survey samples collected(A measure of 1500 means that a sum score of 1500 occurred for that category based on the rating responses given.) From this visual representation, we can see that there is a correlation between relationship status and life satisfaction. Individuals currently in a couple relationship rated their life satisfaction much higher than those that were single and were interviewed. 
+
 ### Chart 2
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
+```{r, echo = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library("dplyr")
 
@@ -185,6 +185,8 @@ ggplot(data = Mental_Health_Dataset, aes(x = Age, y = SWLS_1,SWLS_2,SWLS_3,SWLS_
   geom_col(color = "blue", shape = 16, size = 1) +
   labs(x = "Age", y = "Life Satisfaction", title = "Relationship between Age and Life Satisfaction During the 4th Wave of the Pandemic")
 ```
+
+Chart 2 depicts the relationship between age and self-prescribed overall life satisfaction on a ranking from -10 with 1 being the lowest score of overall life satisfaction and 10 being the highest. We chose these two variables because we are measuring the affects of multiple factors as they impact life satisfaction. Age is a particular interesting variable because maturity and needs for social interaction are different depending on the time of life of many individuals and may correlate to life satisfaction and happiness. From the distribution of scores we can see that ages 18-23 recorded the greatest sum of ratings as compared to any other age range. This data may be skewed for a number of reasons, but one may be that that more individuals in the 18-23 range were interviewed which allowed for a much greater sum of total rankings of life satisfaction.
 
 ### Chart 3
 ```{r, echo = FALSE, message = FALSE, code = readLines("chart_3.R")}
@@ -202,7 +204,7 @@ ggplot(data = mh_data) +
   scale_x_continuous(breaks = seq(0, 35, 5))
 ```
 
-This chart reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has a impact on the student’s anxiety.
+Chart 3 reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has a impact on the student’s anxiety.
 
 It is also important to note that this dataset was collected from university students in Poland so we cannot immediately generalize these finding to university students in the US.
 
