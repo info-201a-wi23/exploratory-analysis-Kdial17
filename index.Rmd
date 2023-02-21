@@ -60,17 +60,16 @@ The limitations to this study are that 706 university students exclusively from 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The first code written for our summary information R script summarizes the data by vaccination status and calculates the number of students, the average age, and the average well-being score for each group. The table generated from this code provides information about the relationships between vaccination status, age, and well-being among the sample, which can help identify potential patterns or differences in the data.
 
 ### Table
 
-Include a table of aggregate information
+The table of aggregate information code summarizes the data by gender and calculates several statistics related to students' vaccination status, COVID symptoms, anxiety, depression, social support, and sleep. The table generated from this code provides information about gender differences in mental health and well-being outcomes among the sample, which can help identify potential gender-specific challenges and needs in relation to the pandemic.
 
-Describe why you included the table and what information it reveals
+Overall, the two tables generated from these codes provide important insights into the mental health and well-being of university students during the pandemic. By combining the information revealed by both tables, we can better understand the relationships between different factors and identify areas for further research or interventions to support the mental health and well-being of students during and after the pandemic.
+
 
 ### Chart 1
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
-```
 
 {r, echo = FALSE, code = readLines("first_chart.R")}
 
@@ -86,7 +85,7 @@ Chart 2 depicts the relationship between age and self-prescribed overall life sa
 
 ### Chart 3
 
-{r, echo = FALSE, code = readLines("second_chart.R")}
+{r, echo = FALSE, code = readLines("chart_3.R")}
 
 Chart 3 reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has an impact on the student’s anxiety.
 
