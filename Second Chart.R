@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+>>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 library("dplyr")
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")

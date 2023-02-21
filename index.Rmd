@@ -2,6 +2,12 @@
 title: "Exploratory Analysis"
 output: html_document
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+library(knitr)
+library(tidyverse)
+
+```
 
 ## The Effects of Covid on University Student's Mental Health
 
@@ -64,6 +70,8 @@ The findings from data about students' mental health during the Covid-19 pandemi
 The limitations to this study are that 706 university students exclusively from Poland were surveyed. The data collected from this dataset can only be used for a subset of this population that fit the same environmental and cultural influences. It is also unknown how the specific surveys were conducted or how the researchers ensured that the data was random. We cannot be 100% confident that the dataset is a true representation of the population. A second possible limitation is that the data was collected across the span of just one month. This short timespan may not be entirely representative of the entire effect of the pandemic on the wellbeing of students. Additionally, the time that the surveys were conducted may coincide with additional academic stressors such as final exams or impactful school-wide events. Some additional challenges to this dataset are that prior moderate to severe levels of depression may have already existed in the subjects sampled which may have skewed any conclusions about the data. In addition, the relationship between vaccination status and levels of mental health remain ambiguous as the simple fact that an individual has a vaccine is not indicative of their overall mental stability and happiness. 
 
 ### Summary Information
+<<<<<<< HEAD
+=======
 ```{r echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary_information.R")}
 install.packages("readxl", repos = "http://cran.us.r-project.org")
 install.packages("dplyr", repos = "http://cran.us.r-project.org")
@@ -104,6 +112,7 @@ cat("The table below shows the number of students, their average age, and their 
 cat("\n")
 cat(summary_df %>% knitr::kable(format = "markdown"))
 ```
+>>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 
 
 The first code written for our summary information R script summarizes the data by vaccination status and calculates the number of students, the average age, and the average well-being score for each group. The table generated from this code provides information about the relationships between vaccination status, age, and well-being among the sample, which can help identify potential patterns or differences in the data.
@@ -149,6 +158,8 @@ select(summary_table, Gender, num_students_assessed, percent_vaccinated, avg_hou
 
 ```
 ### Chart 1
+```{r, echo = FALSE, code = readLines("first_chart.R"), message=FALSE, warning = FALSE}
+```
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("First Chart.R")}
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")

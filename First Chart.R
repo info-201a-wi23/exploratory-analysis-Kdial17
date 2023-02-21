@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+>>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 library("dplyr")
 library("ggplot2")
 
