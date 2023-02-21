@@ -27,6 +27,8 @@ summary_df <- df %>%
 
 
 # Display summary information
+summary_df
+
 cat("Summary Information\n")
 cat("------------------\n\n")
 cat("Dataset Description:\n")
