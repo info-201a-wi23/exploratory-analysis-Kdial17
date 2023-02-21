@@ -2,12 +2,6 @@
 #Summmary information
 
 # Install packages 
-<<<<<<< HEAD
-=======
-install.packages("readxl", repos = "http://cran.us.r-project.org")
-install.packages("dplyr", repos = "http://cran.us.r-project.org")
-
->>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 library(readxl)
 library(dplyr)
 
@@ -15,9 +9,9 @@ library(dplyr)
 # Load the data from excel file
 
 df <- read_excel("Dataset.xlsx")
-colnames(df)
 # Group by vaccination status and calculate summary statistics
 # Group by vaccination status and calculate summary statistics
+
 summary_df <- df %>%
   group_by(Vaccination) %>%
   summarise(
@@ -30,6 +24,8 @@ summary_df <- df %>%
 
 
 # Display summary information
+summary_df
+
 cat("Summary Information\n")
 cat("------------------\n\n")
 cat("Dataset Description:\n")
