@@ -2,6 +2,11 @@
 #Table of Summmary information
 
 # Install packages 
+<<<<<<< HEAD
+=======
+install.packages("readxl", repos = "http://cran.us.r-project.org")
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
+>>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 
 library(readxl)
 library(dplyr)
@@ -9,7 +14,7 @@ library(dplyr)
 
 # Load the data 
 
-df <- read_excel("/Users/stlp//desktop/Dataset.xlsx")
+df <- read_excel("Dataset.xlsx")
 colnames(df)
 
 # Group by gender

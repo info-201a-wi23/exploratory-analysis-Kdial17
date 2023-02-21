@@ -9,15 +9,15 @@ library(tidyverse)
 
 ```
 
-## Mental Health of Students during the COVID-19 Pandemic
+## The Effects of Covid on University Student's Mental Health
 
 ### Authors
 
-James Moy, Khadija Dial, Sadeem Alsemi, Kelly Chen
+Kelly Chen, James Moy, Sadeem Alselmi, Khadija Dial
 
 ### Date
 
-February 20th, 2023
+Winter 2022
 
 ### Abstract
 
@@ -61,41 +61,148 @@ The dataset our group has selected is from Mendeley data: [“Mental health and 
 
 When working with this data we need to address the bias that surrounds vaccinations and the COVID-19 pandemic. In the United States, we have seen the nation divided on what is right for our health. Some people believe that the vaccine is not safe while others view the vaccine as a necessity to protect themselves and others. This study was conducted in Poland, which we are unfamiliar with. The data might be skewed in favor of or against vaccination. In addition, there are many factors to consider for a student’s well being. The data does not address the student’s income or financial status, living conditions, or view on vaccinations. 
 
-
 ### Implications
 
 The findings from data about students' mental health during the Covid-19 pandemic may have significant implications for technologists, designers, and policymakers in how they orient their future projects and the scope they take to address certain issues. Technologists may need to design new remote tools and technologies that can better support students' mental health across distances, such as virtual counseling or self-care apps. Designers may need to consider the impact of their work on students' mental well-being, especially in regards to screen time and social media use. Policymakers may need to provide funding for mental health support in schools and to ensure that privacy laws are in place to protect students' mental health data. They may also need to consider the long-term impact of the pandemic on students' mental health and plan for future support to make up for lost time.
 
 ### Limitations & Challenges
+
 The limitations to this study are that 706 university students exclusively from Poland were surveyed. The data collected from this dataset can only be used for a subset of this population that fit the same environmental and cultural influences. It is also unknown how the specific surveys were conducted or how the researchers ensured that the data was random. We cannot be 100% confident that the dataset is a true representation of the population. A second possible limitation is that the data was collected across the span of just one month. This short timespan may not be entirely representative of the entire effect of the pandemic on the wellbeing of students. Additionally, the time that the surveys were conducted may coincide with additional academic stressors such as final exams or impactful school-wide events. Some additional challenges to this dataset are that prior moderate to severe levels of depression may have already existed in the subjects sampled which may have skewed any conclusions about the data. In addition, the relationship between vaccination status and levels of mental health remain ambiguous as the simple fact that an individual has a vaccine is not indicative of their overall mental stability and happiness. 
 
 ### Summary Information
+<<<<<<< HEAD
+=======
+```{r echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary_information.R")}
+install.packages("readxl", repos = "http://cran.us.r-project.org")
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
+
+library(readxl)
+library(dplyr)
+
+
+# Load the data from excel file
+
+df <- read_excel("Dataset.xlsx")
+colnames(df)
+# Group by vaccination status and calculate summary statistics
+# Group by vaccination status and calculate summary statistics
+summary_df <- df %>%
+  group_by(Vaccination) %>%
+  summarise(
+    count = n(),
+    avg_age = round(mean(Age), 1),
+    avg_wellbeing = round(mean(SWLS_G), 2)
+  ) %>%
+  select(Vaccination, count, avg_age, avg_wellbeing) %>%
+  arrange(Vaccination, avg_age)
+
+# Display summary information
+summary_df
+
+cat("Summary Information\n")
+cat("------------------\n\n")
+cat("Dataset Description:\n")
+cat("The dataset is from Mendeley data: \"Mental health and well-being of university students during the fourth wave of the COVID-19 pandemic\". The website link is https://data.mendeley.com/datasets/bvcwx4tfjm. The data was collected from university students in Poland through an online survey. It includes information on the students' demographic and identity, their mental and physical health during the fourth wave of the COVID-19 pandemic, and their vaccination status. There are 706 observations (students) and 78 features (columns).\n\n")
+cat("Potential Biases:\n")
+cat("The data might be skewed in favor of or against vaccination. In addition, the data does not address the students' income or financial status, living conditions, or views on vaccinations.\n\n")
+cat("Summary Statistics by Vaccination Status:\n")
+cat("========================================\n")
+cat("\n")
+cat("The table below shows the number of students, their average age, and their average wellbeing score, grouped by vaccination status. The values are rounded to one decimal place (for age) and two decimal places (for wellbeing score).\n")
+cat("\n")
+cat(summary_df %>% knitr::kable(format = "markdown"))
+```
+>>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
 
 
 The first code written for our summary information R script summarizes the data by vaccination status and calculates the number of students, the average age, and the average well-being score for each group. The table generated from this code provides information about the relationships between vaccination status, age, and well-being among the sample, which can help identify potential patterns or differences in the data.
 
 ### Table
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Table_of_Summary_information.R")}
+#Sadeem Alselmi 
+#Table of Summmary information
 
-The table of aggregate information code summarizes the data by gender and calculates several statistics related to students' vaccination status, COVID symptoms, anxiety, depression, social support, and sleep. The table generated from this code provides information about gender differences in mental health and well-being outcomes among the sample, which can help identify potential gender-specific challenges and needs in relation to the pandemic.
+# Install packages 
+install.packages("readxl", repos = "http://cran.us.r-project.org")
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
 
-Overall, the two tables generated from these codes provide important insights into the mental health and well-being of university students during the pandemic. By combining the information revealed by both tables, we can better understand the relationships between different factors and identify areas for further research or interventions to support the mental health and well-being of students during and after the pandemic.
+library(readxl)
+library(dplyr)
 
+# Load the data 
 
+df <- read_excel("Dataset.xlsx")
+colnames(df)
+
+# Group by gender
+summary_table <- df %>% 
+  group_by(Gender) %>% 
+  summarize(
+    num_students_assessed = n(),
+    num_features = ncol(.),
+    percent_vaccinated = round(sum(Vaccination == "Yes") / num_students_assessed * 100, 2),
+    percent_covid_symptoms = round(sum(PCL_G == "Yes") / num_students_assessed * 100, 2),
+    percent_anxiety = round(sum(GAD_G == "Yes") / num_students_assessed * 100, 2),
+    percent_depression = round(sum(PHQ_G == "Yes") / num_students_assessed * 100, 2),
+    percent_anx_dep = round(sum(GAD_G == "Yes" & PHQ_G == "Yes") / num_students_assessed * 100, 2),
+    avg_hours_of_sleep = round(mean(SWLS_G, na.rm = TRUE), 2),
+    percent_supported = round(sum(FOCV == "Yes") / num_students_assessed * 100, 2)
+  ) %>% 
+  arrange(desc(num_students_assessed))
+
+# Display the summary table
+summary_table
+
+# Select a few columns and display the result
+select(summary_table, Gender, num_students_assessed, percent_vaccinated, avg_hours_of_sleep)
+
+```
 ### Chart 1
 ```{r, echo = FALSE, code = readLines("first_chart.R"), message=FALSE, warning = FALSE}
 ```
 
-Chart 1 depicts the relationship between the subject’s relationship status and self-prescribed overall life satisfaction on a ranking from 1-10, with 1 being the lowest score of overall life satisfaction and 10 being the highest. The Y-Axis displays the total values based on the survey samples collected(A measure of 1500 means that a sum score of 1500 occurred for that category based on the rating responses given.) From this visual representation, we can see that there is a correlation between relationship status and life satisfaction. Individuals currently in a couple relationship rated their life satisfaction much higher than those that were single and were interviewed.
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("First Chart.R")}
+install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+library("dplyr")
+library(ggplot2)
 
+Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
+
+ggplot(data = Mental_Health_Dataset, aes(x = Relationships, y = SWLS_1,SWLS_2,SWLS_3,SWLS_4,SWLS_5,SWLS_G)) +
+  geom_col(color = "blue", shape = 10, size = 1) +
+  labs(x = "Relationship Status", y = "Life Satisfaction", title ="Relationship between Relationship Status and Life Satisfaction During the 4th Wave of the Pandemic")
+```
 
 ### Chart 2
 
-Chart 2 depicts the relationship between age and self-prescribed overall life satisfaction on a ranking from -10 with 1 being the lowest score of overall life satisfaction and 10 being the highest. We chose these two variables because we are measuring the affects of multiple factors as they impact life satisfaction. Age is a particular interesting variable because maturity and needs for social interaction are different depending on the time of life of many individuals and may correlate to life satisfaction and happiness. From the distribution of scores we can see that ages 18-23 recorded the greatest sum of ratings as compared to any other age range. This data may be skewed for a number of reasons, but one may be that that more individuals in the 18-23 range were interviewed which allowed for a much greater sum of total rankings of life satisfaction.
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
+install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+library("dplyr")
 
+Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
+
+ggplot(data = Mental_Health_Dataset, aes(x = Age, y = SWLS_1,SWLS_2,SWLS_3,SWLS_4,SWLS_5,SWLS_G)) +
+  geom_col(color = "blue", shape = 16, size = 1) +
+  labs(x = "Age", y = "Life Satisfaction", title = "Relationship between Age and Life Satisfaction During the 4th Wave of the Pandemic")
+```
 
 ### Chart 3
+```{r, echo = FALSE, message = FALSE, code = readLines("chart_3.R")}
+library(ggplot2)
+library(dplyr)
 
-Chart 3 reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has an impact on the student’s anxiety.
+mh_data <- read.csv("Mental-Health-With-College-Students.csv", stringsAsFactors = FALSE)
 
-It is also important to note that this dataset was collected from university students in Poland so we cannot immediately generalize these findings to university students in the US.
+ggplot(data = mh_data) +
+  geom_smooth(aes(x = FOCV, y = GAD_G)) +
+  labs(x = "Fear of Covid (FoCV-19S Score)", 
+       y = "Anxiety Severity (GAD-7 Score)", 
+       title = "Anxiety Rates Increasing as the Fear of Covid Increases") +
+  scale_y_continuous(breaks = seq(0, 21, 3)) +
+  scale_x_continuous(breaks = seq(0, 35, 5))
+```
+
+This chart reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has a impact on the student’s anxiety.
+
+It is also important to note that this dataset was collected from university students in Poland so we cannot immediately generalize these finding to university students in the US.
 
