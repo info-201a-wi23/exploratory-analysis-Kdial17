@@ -70,12 +70,9 @@ The findings from data about students' mental health during the Covid-19 pandemi
 The limitations to this study are that 706 university students exclusively from Poland were surveyed. The data collected from this dataset can only be used for a subset of this population that fit the same environmental and cultural influences. It is also unknown how the specific surveys were conducted or how the researchers ensured that the data was random. We cannot be 100% confident that the dataset is a true representation of the population. A second possible limitation is that the data was collected across the span of just one month. This short timespan may not be entirely representative of the entire effect of the pandemic on the wellbeing of students. Additionally, the time that the surveys were conducted may coincide with additional academic stressors such as final exams or impactful school-wide events. Some additional challenges to this dataset are that prior moderate to severe levels of depression may have already existed in the subjects sampled which may have skewed any conclusions about the data. In addition, the relationship between vaccination status and levels of mental health remain ambiguous as the simple fact that an individual has a vaccine is not indicative of their overall mental stability and happiness. 
 
 ### Summary Information
-<<<<<<< HEAD
+
 =======
 ```{r echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary_information.R")}
-install.packages("readxl", repos = "http://cran.us.r-project.org")
-install.packages("dplyr", repos = "http://cran.us.r-project.org")
-
 library(readxl)
 library(dplyr)
 
@@ -83,7 +80,6 @@ library(dplyr)
 # Load the data from excel file
 
 df <- read_excel("Dataset.xlsx")
-colnames(df)
 # Group by vaccination status and calculate summary statistics
 # Group by vaccination status and calculate summary statistics
 summary_df <- df %>%
@@ -112,27 +108,20 @@ cat("The table below shows the number of students, their average age, and their 
 cat("\n")
 cat(summary_df %>% knitr::kable(format = "markdown"))
 ```
->>>>>>> 7bfec2bfb207ee22233786c6c6de8b8f84a0196f
-
 
 The first code written for our summary information R script summarizes the data by vaccination status and calculates the number of students, the average age, and the average well-being score for each group. The table generated from this code provides information about the relationships between vaccination status, age, and well-being among the sample, which can help identify potential patterns or differences in the data.
 
 ### Table
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Table_of_Summary_information.R")}
-#Sadeem Alselmi 
 #Table of Summmary information
 
 # Install packages 
-install.packages("readxl", repos = "http://cran.us.r-project.org")
-install.packages("dplyr", repos = "http://cran.us.r-project.org")
-
 library(readxl)
 library(dplyr)
 
 # Load the data 
 
 df <- read_excel("Dataset.xlsx")
-colnames(df)
 
 # Group by gender
 summary_table <- df %>% 
@@ -157,12 +146,10 @@ summary_table
 select(summary_table, Gender, num_students_assessed, percent_vaccinated, avg_hours_of_sleep)
 
 ```
+
 ### Chart 1
-```{r, echo = FALSE, code = readLines("first_chart.R"), message=FALSE, warning = FALSE}
-```
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("First Chart.R")}
-install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library("dplyr")
 library(ggplot2)
 
@@ -170,13 +157,14 @@ Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-w
 
 ggplot(data = Mental_Health_Dataset, aes(x = Relationships, y = SWLS_1,SWLS_2,SWLS_3,SWLS_4,SWLS_5,SWLS_G)) +
   geom_col(color = "blue", shape = 10, size = 1) +
-  labs(x = "Relationship Status", y = "Life Satisfaction", title ="Relationship between Relationship Status and Life Satisfaction During the 4th Wave of the Pandemic")
+  labs(x = "Relationship Status", y = "Life Satisfaction", title = "Relationship between Relationship Status and Life Satisfaction During the 4th Wave of the Pandemic")
 ```
+
+Chart 1 depicts the relationship between the subject’s relationship status and self-prescribed overall life satisfaction on a ranking from 1-10, with 1 being the lowest score of overall life satisfaction and 10 being the highest. The Y-Axis displays the total values based on the survey samples collected(A measure of 1500 means that a sum score of 1500 occurred for that category based on the rating responses given.) From this visual representation, we can see that there is a correlation between relationship status and life satisfaction. Individuals currently in a couple relationship rated their life satisfaction much higher than those that were single and were interviewed. 
 
 ### Chart 2
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
-install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library("dplyr")
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
@@ -186,12 +174,14 @@ ggplot(data = Mental_Health_Dataset, aes(x = Age, y = SWLS_1,SWLS_2,SWLS_3,SWLS_
   labs(x = "Age", y = "Life Satisfaction", title = "Relationship between Age and Life Satisfaction During the 4th Wave of the Pandemic")
 ```
 
+Chart 2 depicts the relationship between age and self-prescribed overall life satisfaction on a ranking from -10 with 1 being the lowest score of overall life satisfaction and 10 being the highest. We chose these two variables because we are measuring the affects of multiple factors as they impact life satisfaction. Age is a particular interesting variable because maturity and needs for social interaction are different depending on the time of life of many individuals and may correlate to life satisfaction and happiness. From the distribution of scores we can see that ages 18-23 recorded the greatest sum of ratings as compared to any other age range. This data may be skewed for a number of reasons, but one may be that that more individuals in the 18-23 range were interviewed which allowed for a much greater sum of total rankings of life satisfaction.
+
 ### Chart 3
 ```{r, echo = FALSE, message = FALSE, code = readLines("chart_3.R")}
 library(ggplot2)
 library(dplyr)
 
-mh_data <- read.csv("Mental-Health-With-College-Students.csv", stringsAsFactors = FALSE)
+Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
 
 ggplot(data = mh_data) +
   geom_smooth(aes(x = FOCV, y = GAD_G)) +
