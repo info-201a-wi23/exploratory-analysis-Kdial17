@@ -4,7 +4,7 @@ library(scales)
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
 
-ggplot(data = mh_data) +
+ggplot(data = Mental_Health_Dataset) +
   geom_smooth(aes(x = FOCV, y = GAD_G)) +
   labs(x = "Fear of Covid (FoCV-19S Score)", 
        y = "Anxiety Severity (GAD-7 Score)", 

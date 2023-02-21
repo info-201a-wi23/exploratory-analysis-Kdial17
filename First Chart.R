@@ -1,5 +1,5 @@
 library("dplyr")
-library("ggplot2")
+library(ggplot2)
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
 

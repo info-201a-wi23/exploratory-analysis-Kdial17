@@ -149,12 +149,7 @@ select(summary_table, Gender, num_students_assessed, percent_vaccinated, avg_hou
 
 ### Chart 1
 
-<<<<<<< HEAD
-```{r, echo = FALSE, message = FALSE, code = readLines("First Chart.R")}
-install.packages("tidyverse", repos = "http://cran.us.r-project.org")
-=======
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("First Chart.R")}
->>>>>>> 5911ef9afd1c976803810fc87cc451347db9e764
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("First Chart.R")}
 library("dplyr")
 library(ggplot2)
 
@@ -169,12 +164,7 @@ Chart 1 depicts the relationship between the subject’s relationship status and
 
 ### Chart 2
 
-<<<<<<< HEAD
-```{r, echo = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
-install.packages("tidyverse", repos = "http://cran.us.r-project.org")
-=======
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Second Chart.R")} 
->>>>>>> 5911ef9afd1c976803810fc87cc451347db9e764
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Second Chart.R")} 
 library("dplyr")
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
@@ -193,7 +183,7 @@ library(dplyr)
 
 Mental_Health_Dataset <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-Kdial17/main/Mental-Health-With-College-Students.csv")
 
-ggplot(data = mh_data) +
+ggplot(data = Mental_Health_Dataset) +
   geom_smooth(aes(x = FOCV, y = GAD_G)) +
   labs(x = "Fear of Covid (FoCV-19S Score)", 
        y = "Anxiety Severity (GAD-7 Score)", 
@@ -205,4 +195,3 @@ ggplot(data = mh_data) +
 Chart 3 reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has a impact on the student’s anxiety.
 
 It is also important to note that this dataset was collected from university students in Poland so we cannot immediately generalize these finding to university students in the US.
-
