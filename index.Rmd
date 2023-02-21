@@ -5,50 +5,58 @@ output: html_document
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+**Mental Health of Students during the COVID-19 Pandemic**
 
 ### Authors
 
-Names of your team members
+James Moy, Khadija Dial, Sadeem Alsemi, Kelly Chen
 
 ### Date
 
-Winter 2022
+Winter 2023
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
-
+Students are one of the groups of people whose mental health and wellbeing was affected by the Covid-19 pandemic, and the effects are both long-term and short-term, with some coping better than others. This study will investigate the long-term and short-term impacts of the Covid-19 pandemic on students, and the relationship between the demographic factors of students and their mental health during the pandemic. The study will also focus on coping mechanisms of students, external factors that enabled them to cope, and individual factors that influenced the effects of the pandemic upon the students.
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+*Coronavirus, mental health, stress, demographic factors, coping mechanisms*
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+1. What are the short-term effects of corona-virus on the mental-health of students?
+2. What are long-term effects of corona-virus on the mental-health of students?
+3. What are some coping mechanisms used by students to cope with mental health during the pandemic?
+4. What are some demographic factors that influenced the impacts of the pandemic on the mental health of students?
+5. What external factors influenced the impact of the pandemic on the mental health of students?
+
+These questions are important in disaster preparedness in the case of such pandemics or situations in the future. Most students were in the middle of their studies at various levels, and this could have increased the stress especially for those not near their relatives, or those whose relatives or friends contracted the disease and even succumbed to it. The situation was worsened by the lock-down which created a distance barrier, and which also reduced the number of activities that students could engage in to improve their well-being, and mental health. Students are a vulnerable group as it relates to mental health because they are already experiencing other stressors. This study seeks to identify ways that students can be shielded from excessive stressors, and identify effective support that can be used to enhance their mental health and wellbeing in the event of such events.
+
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Sources Used:
+SWLS - Satisfaction with Life screening: https://fetzer.org/sites/default/files/images/stories/pdf/selfmeasures/SATISFACTION-SatisfactionWithLife.pdf 
+GAD-7 - General Anxiety Disorder: https://web.p.ebscohost.com/ehost/detail/detail?vid=0&sid=6e304060-b7f0-47ea-9428-efaf6f778ee9%40redis&bdata=JnNpdGU9ZWhvc3QtbGl2ZQ%3d%3d#AN=161465690&db=a9h 
+PSS-10 - Perceived Stress Screening: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7160845/#:~:text=The%2010%2Ditem%20Perceived%20Stress%20Scale%20(PSS%2D10),academic%20research%20and%20clinical%20practice. 
+PHQ-9 - The Patient Health Questionnaire: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/ 
+A similar study: https://pubmed.ncbi.nlm.nih.gov/32897868/ 
+
+Our topic is on the well-being and mental health status of university students during the COVID-19 pandemic. In order to better understand the effects of the pandemic on the mental health of university students, we have done further research to get a deeper understanding of some of the screenings used within the dataset we chose. Some of the screening used are the PSS-10 (Perceived Stress screening), GAD-7 (Generalized Anxiety Disorder scale), PHQ-9, SWLS (Life Satisfaction screening) and others. The Perceived Stress Scale (PSS-10) is a widely used instrument to measure individuals’ appraisal of global stress in academic research and clinical practice. This scale operates based on two major factors, perceived helplessness and perceived self-efficacy. “Perceived helplessness is made of negatively phrased items “In the last month, how often have you felt nervous and stressed”, while perceived self-efficacy is made of positively phrased items such as, “In the last month, how often have you felt that things were going your way” (Liu Xi, et.al). In combination with the PSS-10, the GAD-7 and PHQ-9 screenings were also utilized. Just like the PSS-10, the GAD-7 and PHQ-9 are other examples of self-report scales used for the screening, diagnosis, and severity assessment of various factors of mental health. The PHQ-9 is used for diagnosing common mental disorders, while the GAD-7 is used for the assessment of anxiety severity. Lastly, the SWLS or satisfaction with life screening assesses an individual's satisfaction with their life as a whole. In the “Review of the Satisfaction with Life Scale” by Pavot, W. G., & Diener, E. they emphasize that the scale does not assess satisfaction with life domains such as health or finances. Because such domains are subject to change depending on the individual, the authors state that the screening rather, “allows subjects to integrate and weight these domains in whatever way they choose.” (Pavot, et. al). Using these screenings together within the dataset allows for us to draw more insightful connections, as well as highlight the need to develop preventive strategies to address the mental health of college students.
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+The dataset our group has selected is from Mendeley data: “Mental health and well-being of university students during the fourth wave of the COVID-19 pandemic”. The website link is https://data.mendeley.com/datasets/bvcwx4tfjm. The contributor for this dataset is Aleksandra Rogowska and the institution of Uniwersytet Opolski Instytut Psychologii. The data was collected from university students from Poland and was done through an online survey. In the survey, information was collected on the student’s demographic and identity. Next, the survey and their research wanted to assess the mental and physical health of these students during the fourth wave of the COVID-19 pandemic. In addition, the student’s vaccination status was also investigated to provide a comparison on the relationship between vaccination and well-being. Alongside this were questions regarding exposure to the coronavirus. There are 706 observations or students assessed (rows) and 78 features (columns).
+
+When working with this data we need to address the bias that surrounds vaccinations and the COVID-19 pandemic. In the United States, we have seen the nation divided on what is right for our health. Some people believe that the vaccine is not safe while others view the vaccine as a necessity to protect themselves and others. This study was conducted in Poland, which we are unfamiliar with. The data might be skewed in favor of or against vaccination. In addition, there are many factors to consider for a student’s well being. The data does not address the student’s income or financial status, living conditions, or view on vaccinations. 
+
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+The findings from data about students' mental health during the Covid-19 pandemic may have significant implications for technologists, designers, and policymakers in how they orient their future projects and the scope they take to address certain issues. Technologists may need to design new remote tools and technologies that can better support students' mental health across distances, such as virtual counseling or self-care apps. Designers may need to consider the impact of their work on students' mental well-being, especially in regards to screen time and social media use. Policymakers may need to provide funding for mental health support in schools and to ensure that privacy laws are in place to protect students' mental health data. They may also need to consider the long-term impact of the pandemic on students' mental health and plan for future support to make up for lost time.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+The limitations to this study are that 706 university students exclusively from Poland were surveyed. The data collected from this dataset can only be used for a subset of this population that fit the same environmental and cultural influences. It is also unknown how the specific surveys were conducted or how the researchers ensured that the data was random. We cannot be 100% confident that the dataset is a true representation of the population. A second possible limitation is that the data was collected across the span of just one month. This short timespan may not be entirely representative of the entire effect of the pandemic on the wellbeing of students. Additionally, the time that the surveys were conducted may coincide with additional academic stressors such as final exams or impactful school-wide events. Some additional challenges to this dataset are that prior moderate to severe levels of depression may have already existed in the subjects sampled which may have skewed any conclusions about the data. In addition, the relationship between vaccination status and levels of mental health remain ambiguous as the simple fact that an individual has a vaccine is not indicative of their overall mental stability and happiness. 
 
 ### Summary Information
 
@@ -61,24 +69,26 @@ Include a table of aggregate information
 Describe why you included the table and what information it reveals
 
 ### Chart 1
-
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
 ``````{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
+{r, echo = FALSE, code = readLines("first_chart.R")}
+
+Chart 1 depicts the relationship between the subject’s relationship status and self-prescribed overall life satisfaction on a ranking from 1-10, with 1 being the lowest score of overall life satisfaction and 10 being the highest. The Y-Axis displays the total values based on the survey samples collected(A measure of 1500 means that a sum score of 1500 occurred for that category based on the rating responses given.) From this visual representation, we can see that there is a correlation between relationship status and life satisfaction. Individuals currently in a couple relationship rated their life satisfaction much higher than those that were single and were interviewed.
+
+
 ### Chart 2
 
-Include a chart
+{r, echo = FALSE, code = readLines("second_chart.R")}
 
-Describe why you chose this chart and what information it reveals
+Chart 2 depicts the relationship between age and self-prescribed overall life satisfaction on a ranking from -10 with 1 being the lowest score of overall life satisfaction and 10 being the highest. We chose these two variables because we are measuring the affects of multiple factors as they impact life satisfaction. Age is a particular interesting variable because maturity and needs for social interaction are different depending on the time of life of many individuals and may correlate to life satisfaction and happiness. From the distribution of scores we can see that ages 18-23 recorded the greatest sum of ratings as compared to any other age range. This data may be skewed for a number of reasons, but one may be that that more individuals in the 18-23 range were interviewed which allowed for a much greater sum of total rankings of life satisfaction.
+
 
 ### Chart 3
 
-Include a chart
+{r, echo = FALSE, code = readLines("second_chart.R")}
 
-Describe why you chose this chart and what information it reveals
+Chart 3 reveals the relationship between the fear of covid and anxiety among university students during the 4th wave of the pandemic. As the students’ fear of covid increased, so did their anxiety severity. The student’s anxiety severity was measured using the GAD-7, a well known testing method that categorizes how critical someone's anxiety is for their age range. We decided to correlate the student’s fear of covid with how severe their anxiety was, as there may be some connection or influence between the two. Through the chart we were able to see a strong positive correlation between the two, leading us to conclude that the fear of covid has an impact on the student’s anxiety.
+
+It is also important to note that this dataset was collected from university students in Poland so we cannot immediately generalize these findings to university students in the US.
+
