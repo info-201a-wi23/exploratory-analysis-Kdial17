@@ -2,9 +2,6 @@
 #Summmary information
 
 # Install packages 
-install.packages("readxl")
-install.packages("dplyr")
-
 library(readxl)
 library(dplyr)
 

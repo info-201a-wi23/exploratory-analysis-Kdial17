@@ -5,5 +5,4 @@ library(ggplot2)
 ggplot() +
   geom_point(aes(x=x_values, y = y_values))
 
-install.packages("rmarkdown")
 
